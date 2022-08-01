@@ -1,6 +1,6 @@
 package Commands;
 
-import org.bukkit.ChatColor;
+import com.spyxar.lockitem.Color;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,7 +20,7 @@ public class LockItemCommand implements CommandExecutor
             Player player = (Player) sender;
             if (player.getInventory().getItemInMainHand() == null || player.getInventory().getItemInMainHand().getType().equals(Material.AIR))
             {
-                player.sendMessage(ChatColor.RED + "You aren't holding anything.");
+                player.sendMessage(Color.RED + "You aren't holding anything.");
                 return true;
             }
             ItemStack itemToLock = player.getInventory().getItemInMainHand();

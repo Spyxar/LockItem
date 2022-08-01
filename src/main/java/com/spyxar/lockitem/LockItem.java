@@ -20,6 +20,8 @@ public class LockItem extends JavaPlugin
 
     public static ItemLocker itemLocker;
 
+    public static String pluginVersion;
+
     private File customConfigFile;
     private FileConfiguration customConfig;
 
@@ -27,14 +29,13 @@ public class LockItem extends JavaPlugin
     public void onEnable()
     {
         pluginInstance = this;
+        pluginVersion = "v" + pluginInstance.getDescription().getVersion();
         createCustomConfig();
         itemLocker = new ItemLocker(this);
         getServer().getPluginManager().registerEvents(new DropEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlaceEventListener(), this);
         this.getCommand("lockitem").setExecutor(new MainCommand());
         this.getCommand("lockitem").setTabCompleter(new MainTabCompleter());
-        //this.getCommand("lockitem").setExecutor(new LockItemCommand());
-        //this.getCommand("reload").setExecutor(new ReloadCommand());
     }
 
     @Override

@@ -9,10 +9,6 @@ commands:
     usage: /<command>
     permission: lockitem.lockitem
     aliases: [lock]
-    #reload:
-    #description: Reloads the plugin
-    #usage: /<command>
-    #permission: lockitem.admin
 permissions:
   lockitem.*:
     description: Gives access to all LockItem permissions

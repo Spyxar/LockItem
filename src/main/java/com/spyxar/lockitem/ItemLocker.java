@@ -3,7 +3,6 @@ package com.spyxar.lockitem;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -30,21 +29,21 @@ public class ItemLocker
         {
             return;
         }
-        List<String> lore = new ArrayList<String>();
+        List<String> lore = new ArrayList<>();
         if(meta.hasLore())
         {
             lore = meta.getLore();
         }
         if (!meta.hasDisplayName() && plugin.getCustomConfig().getBoolean("only-lock-named-items"))
         {
-            player.sendMessage(ChatColor.RED + "You can only lock named items.");
+            player.sendMessage(Color.RED + "You can only lock named items.");
             return;
         }
         PersistentDataContainer container = meta.getPersistentDataContainer();
         if (container.has(lockKey, PersistentDataType.BYTE))
         {
             container.remove(lockKey);
-            player.sendMessage(ChatColor.GREEN + "Unlocked item.");
+            player.sendMessage(Color.GREEN + "Unlocked item.");
             for (String l : lore)
             {
                 if (l.contains("⋒"))
@@ -59,9 +58,9 @@ public class ItemLocker
             container.set(lockKey, PersistentDataType.BYTE, (byte) 1);
             if (plugin.getCustomConfig().getBoolean("add-lore-to-item"))
             {
-                lore.add(ChatColor.RED.toString() + ChatColor.ITALIC.toString() + ChatColor.BOLD.toString() + "⋒" + ChatColor.RESET.toString() + ChatColor.RED.toString() + " Locked");
+                lore.add(Color.RED + Color.ITALIC + Color.BOLD + "⋒" + Color.RESET + Color.RED + " Locked");
             }
-            player.sendMessage(ChatColor.GREEN + "Locked item.");
+            player.sendMessage(Color.GREEN + "Locked item.");
         }
         meta.setLore(lore);
         itemStack.setItemMeta(meta);

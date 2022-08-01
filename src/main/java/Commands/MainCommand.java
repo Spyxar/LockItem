@@ -1,6 +1,7 @@
 package Commands;
 
-import org.bukkit.ChatColor;
+import com.spyxar.lockitem.Color;
+import com.spyxar.lockitem.LockItem;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,14 +14,14 @@ public class MainCommand implements CommandExecutor
     {
         if (!sender.hasPermission("lockitem.lockitem"))
         {
-            sender.sendMessage(ChatColor.RED + "You are missing the permission \"lockitem.lockitem\"");
+            sender.sendMessage(Color.RED + "You are missing the permission \"lockitem.lockitem\"");
             return true;
         }
         if (args.length == 0)
         {
             if (!(sender instanceof Player))
             {
-                sender.sendMessage(ChatColor.RED + "Only players can use this command");
+                sender.sendMessage(Color.RED + "Only players can use this command");
                 return true;
             }
             new LockItemCommand().onCommand(sender, command, label, args);
@@ -30,7 +31,7 @@ public class MainCommand implements CommandExecutor
         {
             if (!(sender instanceof Player))
             {
-                sender.sendMessage(ChatColor.RED + "Only players can use this command");
+                sender.sendMessage(Color.RED + "Only players can use this command");
                 return true;
             }
             new LockItemCommand().onCommand(sender, command, label, args);
@@ -47,7 +48,7 @@ public class MainCommand implements CommandExecutor
         }
         else if (args[0].equalsIgnoreCase("version") || args[0].equals("v"))
         {
-            sender.sendMessage("§6LockItem v1.0\n§6Author: §eSpyxar\n§6Commands: §e/lockitem help");
+            sender.sendMessage("§6LockItem §7- §6" + LockItem.pluginVersion + "\n§6Author: §eSpyxar\n§6Commands: §e/lockitem help\n§6GitHub: §ehttps://github.com/Spyxar/LockItem");
         }
         else
         {
