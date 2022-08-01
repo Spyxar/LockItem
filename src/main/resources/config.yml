@@ -1,0 +1,3 @@
+add-lore-to-item: true
+only-lock-named-items: false
+stop-placing-locked-items: false

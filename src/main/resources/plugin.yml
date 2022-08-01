@@ -1,0 +1,32 @@
+name: LockItem
+main: com.spyxar.lockitem.LockItem
+version: 1.0
+author: Spyxar
+api-version: 1.19
+commands:
+  lockitem:
+    description: The plugin's main command
+    usage: /<command>
+    permission: lockitem.lockitem
+    aliases: [lock]
+    #reload:
+    #description: Reloads the plugin
+    #usage: /<command>
+    #permission: lockitem.admin
+permissions:
+  lockitem.*:
+    description: Gives access to all LockItem permissions
+    default: false
+    children:
+      lockitem.lockitem: true
+      lockitem.version: true
+      lockitem.admin: true
+  lockitem.lockitem:
+    description: Allows you to lock your items
+    default: true
+  lockitem.version:
+    description: Allows you to use the LockItem version command
+    default: op
+  lockitem.admin:
+    description: Allows you to use the plugin's admin commands
+    default: op
