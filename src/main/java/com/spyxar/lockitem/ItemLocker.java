@@ -13,7 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class ItemLocker
 {
-    private LockItem plugin = LockItem.getInstance();
+    private final LockItem plugin = LockItem.getInstance();
 
     private final NamespacedKey lockKey;
 

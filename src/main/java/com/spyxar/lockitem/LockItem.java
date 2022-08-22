@@ -3,16 +3,15 @@ package com.spyxar.lockitem;
 import java.io.File;
 import java.io.IOException;
 
-import Commands.MainCommand;
-
-import TabCompleters.MainTabCompleter;
+import com.spyxar.lockitem.Commands.MainCommand;
+import com.spyxar.lockitem.TabCompleters.MainTabCompleter;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import Listeners.DropEventListener;
-import Listeners.PlaceEventListener;
+import com.spyxar.lockitem.Listeners.DropEventListener;
+import com.spyxar.lockitem.Listeners.PlaceEventListener;
 
 public class LockItem extends JavaPlugin
 {

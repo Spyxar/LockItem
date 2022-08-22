@@ -1,4 +1,4 @@
-package Listeners;
+package com.spyxar.lockitem.Listeners;
 
 import com.spyxar.lockitem.Color;
 import org.bukkit.event.EventHandler;
@@ -14,7 +14,7 @@ public class DropEventListener implements Listener
     public void onItemDrop(PlayerDropItemEvent e)
     {
         ItemStack item = e.getItemDrop().getItemStack();
-        if (LockItem.itemLocker.isLocked(item) == true)
+        if (LockItem.itemLocker.isLocked(item))
         {
             e.setCancelled(true);
             e.getPlayer().sendMessage(Color.RED + "This item is locked.");

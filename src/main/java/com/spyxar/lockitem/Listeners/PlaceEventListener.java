@@ -1,4 +1,4 @@
-package Listeners;
+package com.spyxar.lockitem.Listeners;
 
 import com.spyxar.lockitem.Color;
 import org.bukkit.event.EventHandler;
@@ -10,7 +10,7 @@ import com.spyxar.lockitem.LockItem;
 
 public class PlaceEventListener implements Listener
 {
-    private LockItem plugin = LockItem.getInstance();
+    private final LockItem plugin = LockItem.getInstance();
 
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e)
@@ -19,8 +19,8 @@ public class PlaceEventListener implements Listener
         boolean stopPlacingLockedItems = plugin.getCustomConfig().getBoolean("stop-placing-locked-items");
         if (LockItem.itemLocker.isLocked(item) && stopPlacingLockedItems)
         {
-            e.setCancelled(true);
             e.getPlayer().sendMessage(Color.RED + "This item is locked.");
+            e.setCancelled(true);
         }
     }
 }

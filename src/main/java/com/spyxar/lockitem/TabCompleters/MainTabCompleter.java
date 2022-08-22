@@ -1,4 +1,4 @@
-package TabCompleters;
+package com.spyxar.lockitem.TabCompleters;
 
 import java.util.ArrayList;
 import java.util.Arrays;

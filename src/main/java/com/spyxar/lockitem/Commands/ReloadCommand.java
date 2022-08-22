@@ -1,4 +1,4 @@
-package Commands;
+package com.spyxar.lockitem.Commands;
 
 import com.spyxar.lockitem.Color;
 import org.bukkit.command.Command;
